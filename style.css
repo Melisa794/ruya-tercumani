@@ -1,0 +1,472 @@
+/* style.css - GÜNCEL VERSİYON */
+
+:root {
+    /* Renk Paleti Tanımları - Rüya Yorumcusu Temasına Daha Uygun Sıcak Tonlar */
+    --background-soft: #FDF9F3; /* Çok açık krem/bej - Göz yormayan ve sıcak */
+    --text-primary: #333; /* Koyu gri - Okunabilirliği yüksek */
+    --heading-color: #8D6B4E; /* Yumuşak kahve/bronz - Sıcak ve zarif başlık */
+    --button-bg-start: #CDB891; /* Altın kahve başlangıcı */
+    --button-bg-end: #B4A17E; /* Altın kahve bitişi - degrade için */
+    --button-text: #FFFFFF; /* Buton metni beyaz */
+    --border-soft: #D8CFC0; /* Yumuşak kenarlıklar için */
+     --primary-color: #f7f3e9;       /* Açık bej. Sayfanın ana arka planı için ideal, göz yormaz. */
+     --secondary-color: #e0d8c9;     /* Daha koyu bej. Kartlar veya kutular için harika bir arka plan. */
+     --accent-color: #b38b6d;        /* Toprak tonunda kahve. Önemli butonlar, başlıklar ve vurgular için sıcak bir renk. */
+     --text-color: #3e322d;          /* Koyu kahverengi. Okunabilirliği yüksek ve sıcak bir metin rengi. */
+     --light-text-color: #7a6e60;    /* Açık gri-kahve. İkincil metinler için kullanılır. */
+      }
+
+
+
+body {
+    font-family: 'Lora', serif; /* Daha edebi ve rüyavari bir serif font */
+    line-height: 1.7; /* Okunabilirliği artırır */
+    margin: 0;
+    padding: 0;
+    background-color:#f9f6f2;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* Yatay kaydırmayı engeller */
+}
+
+/* Genel Kutu Modeli */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px 40px; /* Üst padding artırıldı */
+    background-color: rgba(255, 255, 255, 0.85); /* Daha az şeffaf, daha belirgin */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Daha belirgin gölge */
+    position: relative; /* Eğer gelecekte bir üst resim/şekil eklenirse */
+    z-index: 10;
+}
+
+/* style.css - Başlık ve Logo Bölümü Stilleri */
+
+header .header-content {
+    max-width: 900px; /* İçeriğin genişliğini sınırlar */
+    margin: 0 auto;   /* Ortalar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Logo, başlık ve alt metin arası boşluk */
+}
+
+/* style.css - Hareketli Banner Bölümü Stilleri */
+
+header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    position: relative; /* Bu çok önemli! Animasyon için referans noktası olur */
+    z-index: 10;
+    overflow: hidden; /* Animasyonun header dışına taşmasını engellemek için */
+}
+
+.header-animation-container {
+    position: absolute; /* Header'a göre konumlandırılır */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Header ile aynı yüksekliği kaplar */
+    z-index: -1; /* İçeriğin (başlık, logo) arkasına geçmesini sağlar */
+    /* Animasyon veya GIF arka plan olarak buraya gelecek */
+    /*background-color: #E0EFFF; /* Geçici bulut/gökyüzü benzeri bir arka plan rengi */
+    /* Eğer basit bir resim kullanacaksak: */
+    /* background-image: url('assets/cloud_pattern.png'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* opacity: 0.7; /* Biraz şeffaflık ekleyebiliriz */
+}
+
+/* Eğer GIF kullanacaksanız, GIF'i bu div'in içine yerleştirip stil verebilirsiniz */
+.header-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Resmi veya GIF'i container'a sığdırır */
+    display: block;
+    opacity: 0.6; /* GIF için biraz şeffaflık */
+}
+
+/* Eğer LottiePlayer kullanacaksanız, <lottie-player> etiketi için özel bir stil genellikle gerekmez,
+   çünkü kendi `style` özniteliği ile boyutlandırılır. */
+
+   .logo-placeholder {
+    width: 100px; /* Logonun genişliği */
+    height: 100px; /* Logonun yüksekliği */
+    border-radius: 45%; /* Yuvarlak şekil */
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Aşağıdaki satırları kaldır veya yorum satırı yap (artık metin olmayacak): */
+    /* font-family: 'Playfair Display', serif; */
+    /* font-size: 1.8em; */
+    /* color: white; */
+    /*border: 0.5px solid var(--accent-color);  Logonun etrafına belirgin çerçeve ekleyebilirsin */
+}
+
+.logo-img {
+    max-width: 100%; /* Resim logonun placeholder'a sığmasını sağlar */
+    height: auto;
+    display: block; /* Gereksiz boşlukları kaldırır */
+}
+
+/* Başlık fontu ve rengi header h1'den geliyor, p de header p'den */
+/* Bu kısımlara gerek yoksa yorum satırı yapabilirsiniz. */
+/* Mevcut h1 ve header p stilleri yeterli olacaktır. */
+/*
+header h1 {
+    font-size: 4em;
+    letter-spacing: 2px;
+}
+header p {
+    font-size: 1.4em;
+}
+*/
+
+h1 {
+    font-family: 'Dancing Script', cursive; /* Yeni font */
+    font-size: 4.3em; /* Yazı boyutunu büyütebilirsiniz */
+    font-weight: 700; /* Daha kalın görünüm için */
+    color: #7c5348; /* Daha sıcak ve koyu kahverengi tonu */
+    text-shadow: 2px 2px 5px rgba(42, 42, 42, 0.1); /* Hafif gölge ekleyerek derinlik katın */
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.3em;
+    color: var(--light-text-color);
+    max-width: 700px;
+    margin: 0 auto; /* Ortala */
+    font-style: italic; /* Biraz eğik yazı tipi */
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column; /* İçerik dikey olarak sıralanır */
+    justify-content: flex-start; /* İçeriği yukarıdan başlat */
+    align-items: center;
+    padding: 40px 20px; /* Üstten ve alttan boşluk */
+    gap: 30px; /* Bölümler arası boşluk */
+}
+/* style.css */
+
+#dreamInput {
+    width: 100%;
+    min-height: 200px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-soft);
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-family: 'lora', serif;
+    resize: vertical;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+.text-input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px; /* Rüya metni ile arasında boşluk */
+    border: 1px solid var(--border-soft);
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-family: 'lora', serif; /* Sayfanın genel fontu ile uyumlu */
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.text-input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(224, 199, 144, 0.3);
+}
+
+#dreamInput:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(224, 199, 144, 0.3);
+}
+
+
+.hero-section {
+    text-align: center;
+    margin-bottom: 40px; /* Başlangıç bölümü alt boşluğu */
+}
+
+/* Buton Hareketliliği ve Renkleri */
+.action-button {
+    background: linear-gradient(to right, var(--button-bg-start), var(--button-bg-end));
+    background-color: #8ecae6;
+    color: white;
+    padding: 18px 40px; /* Buton boyutu büyütüldü */
+    border: none;
+    border-radius: 8px; /* Daha yumuşak köşeler */
+    font-size: 1.4em; /* Yazı boyutu büyütüldü */
+    cursor: pointer;
+    transition: all 0.4s ease-in-out; /* Animasyon süresi ve tipi ayarlandı */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Daha belirgin ve derin gölge */
+    font-family: 'Open Sans', sans-serif; /* Okunur, modern font */
+    font-weight: 600; /* Kalınlık */
+    letter-spacing: 0.8px;
+    position: relative;
+    overflow: hidden; /* İç animasyonlar için */
+}
+
+.action-button:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3); /* Parlama efekti için beyaz şeffaf katman */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease-out, height 0.4s ease-out; /* Parlama animasyonu */
+    opacity: 0;
+}
+
+.action-button:hover:before {
+    width: 250px; /* Parlamanın büyüklüğü */
+    height: 250px; /* Parlamanın büyüklüğü */
+    opacity: 1;
+}
+
+.action-button:hover {
+    transform: translateY(-5px) scale(1.02); /* Daha belirgin yukarı kayma ve hafif büyüme */
+    background-color: #7abeda;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25); /* Daha da belirgin gölge */
+    background: linear-gradient(to left, var(--button-bg-start), var(--button-bg-end)); /* Gradient yönü ters çevrildi */
+    letter-spacing: 1.2px; /* Harf aralığı artırıldı */
+}
+
+.action-button:active {
+    transform: translateY(-2px); /* Tıklamada hafif geri gelme */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Yeni Eklenecek Bölümler İçin Genel Stil */
+section {
+    width: 100%;
+    max-width: 800px; /* İçerik genişliğini sınırlar */
+    padding: 30px;
+    background-color: #FFFFFF; /* İçerik kutuları beyaz */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+    border: 1px solid var(--border-soft); /* Yumuşak kenarlık */
+}
+
+section h2 {
+    color: var(--heading-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--accent-color); /* Vurgulu çizgi */
+    padding-bottom: 10px;
+}
+
+/* Yazı Fontları Renkli Olsun - Örnek Kullanım */
+.highlight-text {
+    color: var(--accent-color); /* Vurgu rengi */
+    font-weight: bold;
+}
+
+.dream-analysis-result {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #FFFDEE; /* Çok açık sarı/krem arka plan */
+    border-left: 5px solid var(--accent-color);
+    border-radius: 5px;
+    font-style: italic;
+    color: var(--text-primary);
+}
+
+#result h2:nth-of-type(2), 
+#result h3:nth-of-type(2) 
+{
+    font-family: 'Playfair Display', serif; 
+    font-size: 2.2em; 
+    font-weight: 700; 
+    color: var(--text-primary); 
+    margin-top: 40px; 
+    margin-bottom: 25px; 
+    text-align: center; 
+    line-height: 1.3;
+    letter-spacing: 1px;
+    text-transform: uppercase; 
+    border-bottom: 2px solid var(--accent-color); 
+    padding-bottom: 10px; 
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: auto; /* En alta sabitlenmesini sağlar */
+    color: var(--light-text-color);
+    font-size: 0.95em;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+    border-top: 1px solid var(--border-soft);
+}
+/* style.css */
+
+/* Rüya Yorumu ve Hikaye Bölümleri için Stiller */
+.dream-analysis-output {
+    margin-top: 30px;
+    padding: 30px;
+    background: linear-gradient(to bottom right, #FAF3DD, #FFF9F0);
+    border-left: 5px solid rgba(179, 139, 109, 0.4);
+    border: 1px solid var(--border-soft);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    font-family: 'Merriweather', serif;
+    font-size: 1.1em;
+    line-height: 1.9;
+    text-align: justify;
+    color: var(--text-color);
+    text-shadow: 0.4px 0.4px 0.5px rgba(0,0,0,0.03);
+    transition: background 0.4s ease-in-out;
+}
+.dream-story-output {
+    margin-top: 30px;
+    padding: 30px;
+    background: linear-gradient(to bottom right, #F3E5F5, #FFF1FA); /* pastel mor-pembe tonları */
+    border-left: 5px solid rgba(179, 139, 109, 0.4);
+    border: 1px solid var(--border-soft);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+
+.dream-analysis-output h2 {
+    color: var(--heading-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 2em; /* Daha büyük başlık */
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    text-align: left; /* Başlıkları sola yasla */
+    margin-top: 25px; /* Başlıklar arası boşluk için */
+}
+.dream-analysis-output h2:first-of-type {
+    margin-top: 0; /* İlk h2'nin üstündeki fazla boşluğu kaldır */
+}
+
+.dream-analysis-output h3 { /* Hikayeleştirici başlığı için */
+    color: var(--heading-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em; /* Ara başlıklar için */
+    margin-top: 25px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.dream-analysis-output p {
+    font-size: 1.1em;
+    line-height: 1.9;
+    margin-bottom: 1.5em;
+    text-align: justify;
+    text-indent: 30px;
+    color: var(--text-primary);
+}
+
+.dream-analysis-output strong {
+    color: var(--accent-color); /* Kalın yazıları vurgu renginde yap */
+}
+
+.dream-analysis-output ul, .dream-analysis-output ol {
+    margin-left: 25px;
+    margin-bottom: 1em;
+    font-family: 'Lora', serif;
+    color: var(--text-primary);
+}
+
+.dream-analysis-output li {
+    margin-bottom: 0.5em;
+}
+/* Butonlar arası boşluk ve düzen için yeni eklenen kodlar */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Butonlar arası boşluk */
+    margin-top: 20px;
+}
+
+.button-group .action-button {
+    flex-grow: 1;
+    max-width: 200px;
+    text-align: center;
+    padding: 12px 20px;
+}
+
+/* Hikaye bölümü paragrafları için özel stil */
+.dream-story-output p {
+    font-family: 'Playfair Display', serif; /* Hikaye için istediğiniz font */
+    font-size: 1.2em; /* İsteğe bağlı olarak font boyutu */
+    line-height: 2; /* İsteğe bağlı olarak satır aralığı */
+    text-align: justify;
+    text-indent: 0; /* Eğer paragraf girintisi istemiyorsanız */
+    color: var(--text-color);
+}
+
+/* RÜYA KARTI GÖRSEL TASARIMI */
+.dream-card-wrapper {
+    padding: 40px;
+    background: #fffdf8;
+    border: 2px dashed var(--accent-color);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 40px;
+    position: relative;
+}
+
+.dream-card-wrapper::before {
+    content: "🪄 Esrar-ı Rüya Kartı";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fffdf8;
+    padding: 5px 15px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 30px;
+}
+
+/* Mobil Uyum için Basit Media Query */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .action-button {
+        font-size: 1.1em;
+        padding: 15px 30px;
+    }
+
+    section {
+        padding: 20px;
+        margin: 0 15px 20px; /* Kenarlardan boşluk bırak */
+    }
+}
